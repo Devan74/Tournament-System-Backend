@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-app.use(cors("http://localhost:3000"));
+app.use(cors("https://tournament-system-indigg.netlify.app"));
 app.use(express.json());
 
 // Connect to MongoDB
