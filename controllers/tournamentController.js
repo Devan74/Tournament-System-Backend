@@ -52,11 +52,11 @@ exports.deleteTournament = async (req, res) => {
 
 exports.getTournament = async (req, res) => {
   try {
-    const tournament = await Tournament.findById(req.params.id).populate('participants');
-    if (!tournament) {
+    const tournaments = await Tournament.findById(req.params.id).populate('participants');
+    if (!tournaments) {
       return res.status(404).json({ error: 'Tournament not found' });
     }
-    res.status(200).json(tournament);
+    res.status(200).json(tournaments);
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }

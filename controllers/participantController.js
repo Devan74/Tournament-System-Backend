@@ -44,6 +44,6 @@ exports.deleteParticipant = async (req, res) => {
     await Participant.findByIdAndDelete(req.params.id);
     res.status(204).send();
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({error: 'Internal server error'});
   }
 };
